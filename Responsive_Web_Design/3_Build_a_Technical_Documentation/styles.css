@@ -1,0 +1,226 @@
+* {
+  box-sizing: border-box;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+}
+
+.nav-link {
+  position: absolute;
+  width: 100%;
+}
+
+#topbar {
+  top: 0;
+}
+
+#topbar_logo_element {
+  width: 45px;
+  padding-left: 80px;
+  padding-top: 18px;
+}
+
+#topbar {
+  position: fixed;
+  text-align: center;
+  width: 100%;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: linear-gradient(0.25turn, #003366, #024961, #1797c0);
+  /*background-color: #1797c0;*/
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#topbar h2 {
+  display: inline-block;
+  color: white;
+  padding-left: 60px;
+  padding-right: 20px;
+  font-family: Oswald;
+  text-decoration: none;
+}
+
+#navbar {
+  z-index: -2;
+  top: 120px;
+  left: 90px;
+  position: fixed;
+  width: 280px;
+  height: 380px;
+  background: linear-gradient(0.25turn, #f1f1f181, #defefe 80%, #fff);
+  max-width: 280px;
+  min-width: 260px;
+}
+
+#navbar p {
+  padding-top: 4px;
+  padding-bottom: 26px;
+  padding-left: 20px;
+  font-family: Lato;
+}
+
+#navbar header {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  font-size: 18px;
+  background: linear-gradient(0.25turn, #003366, #024961, #1797c0);
+  color: white;
+  font-family: Lato;
+}
+
+.nav-link {
+  text-decoration: none;
+}
+
+.nav-link:active,
+.nav-link:link,
+.nav-link:visited {
+  color: #5fabc5;
+  font-weight: bold;
+}
+
+.nav-link:hover {
+  color: #1797c0;
+  background-color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  height: 50px;
+  width: 280px;
+  margin-top: -20px;
+  padding-top: 20px;
+  padding-left: 20px;
+  margin-left: -20px;
+  transition-duration: 0.1s;
+  transform: translate3d(10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#container {
+  z-index: -3;
+  float: right;
+  width: 100%;
+  position: fixed;
+  height: 70vh;
+  overflow-y: scroll;
+  top: 120px;
+}
+
+#main-doc {
+  font-family: Lato;
+  position: relative;
+  margin-left: 400px;
+  height: 100vh;
+}
+
+section {
+  font-family: Lato;
+  background-color: white;
+  margin-left: 10px;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+section p {
+  text-align: justify;
+  font-size: 16px;
+}
+
+section > ul > li,
+.lh {
+  line-height: 2em;
+}
+
+section > ul > li > ul > li {
+  list-style: square;
+  line-height: 2em;
+}
+
+section > ul > li > p > b,
+[id="resources_and_references"] > h3 {
+  text-decoration: underline;
+}
+
+[id="resources_and_references"] {
+  background: linear-gradient(0.25turn, #f1f1f181, #defefe 80%, #fff);
+}
+
+pre {
+  background-color: #024961;
+  border-radius: 10px;
+  color: #ccc;
+  padding: 5px;
+}
+
+header {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Lato;
+  color: #1797c0;
+  padding-top: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+  #topbar_logo_element {
+    padding-left: 15px;
+    width: 30px;
+  }
+
+  #topbar {
+    position: absolute;
+    z-index: 2;
+  }
+
+  #topbar h2 {
+    font-size: 1em;
+    padding-top: 5px;
+  }
+
+  #navbar {
+    padding-top: 12px;
+    z-index: 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    left: 0;
+  }
+
+  #navbar p {
+    z-index: 0;
+  }
+
+  .nav-link {
+    z-index: 0;
+  }
+
+  #main-doc {
+    position: relative;
+    top: 260px;
+    margin-left: 0;
+    padding-left: 8px;
+    width: 100%;
+  }
+
+  section ol {
+    columns: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}
+
+@media (width <= 794px) {
+  .navbar {
+    display: none;
+  }
+}

@@ -1,0 +1,218 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Survey Form</title>
+  </head>
+  <body>
+    <h1 id="title">Job Search Survey Form</h1>
+    <p id="description">
+Please take a moment to share your job search experience. Your feedback will help us enhance our services to better meet your needs. The survey is brief and should only take a few minutes. Thank you for your input!</p>
+    <form id="survey-form">
+      <label id="name-label" for="name">Name:
+        <input id="name" name="name" type="text" placeholder="Enter your name" required />
+      </label>
+      <label id="email-label" for="email">Email:
+        <input id="email" name="email" type="email" placeholder="Enter your email" required />
+      </label>
+      <label id="number-label" for="number">Age:
+        <input id="age" type="number" name="age" placeholder="Enter your age" min="18" max="65"/>
+      </label> 
+      <label for="gender-dropdown">Gender:
+        <select id="gender-dropdown" name="gender">
+          <option value="M">Male</option>
+          <option value="F">Female</option>
+          <option value="O">Other</option>
+        </select>
+      </label>
+      <label id="number-label" for="number">Mobile Number:
+        <input id="number" type="number" name="mobile-number" placeholder="Enter your mobile number" min="1000000000" max="9999999999"
+        />
+      </label> 
+      <label for="dropdown">What type of job are you looking for?
+        <select id="dropdown" name="job-type">
+          <option value="">(select one)</option>
+          <option value="1">Part-time</option>
+          <option value="2">Full-time</option>
+          <option value="3">Contract</option>
+          <option value="4">Freelancer</option>
+        </select>
+      </label>  
+      <fieldset>
+        <legend>Are you currently employed?</legend>
+        <div class="form-group">
+          <input id="yes-radio" type="radio" name="job-alert" value="Yes" class="inline" checked />
+          <label for="yes-radio" class="inline-label">Yes</label>
+        </div>
+        <div class="form-group">
+          <input id="no-radio" type="radio" name="job-alert" value="No" class="inline" />
+          <label for="no-radio" class="inline-label">No</label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>What social network do you believe is the most effective for online job search?</legend>
+        <div class="form-group">
+          <input id="linkedin" type="checkbox" name="job-search" value="LinkedIn" class="inline" checked />
+          <label for="linkedin" class="inline-label">LinkedIn</label>
+        </div>
+        <div class="form-group">
+          <input id="indeed" type="checkbox" name="job-search" value="Indeed" class="inline" />
+          <label for="indeed" class="inline-label">Indeed</label>
+        </div>
+        <div class="form-group">
+          <input id="glassdoor" type="checkbox" name="job-search" value="Glassdoor" class="inline" />
+          <label for="glassdoor" class="inline-label">Glassdoor</label>
+        </div>
+        <div class="form-group">
+          <input id="monster" type="checkbox" name="job-search" value="Monster" class="inline" />
+          <label for="monster" class="inline-label">Monster</label>
+        </div>
+        <div class="form-group">
+          <input id="other" type="checkbox" name="job-search" value="Other" class="inline" />
+          <label for="other" class="inline-label">Other</label>
+        </div>
+      </fieldset>
+      <label for="exp">If other, then list the social network which is frequently used.
+        <textarea id="exp" name="exp" rows="6" placeholder="Type here.."></textarea>
+      </label>
+      <input id="submit" type="submit" value="Submit" />
+    </form>
+  </body>
+  <footer>In case of queries, please contact <strong>admin@support.com</strong>.</footer>
+</html>
+
+** end of undefined **
+
+** start of undefined **
+
+body {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+background-color: #f5f5f5;
+  color: #333;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+}
+
+h1,
+p {
+  margin: 1em auto;
+text-align: center;
+  color: #0056b3
+}
+
+p{
+ color: #007bff; font-style:italic;
+}
+
+form {
+  width: 80vw;
+  max-width: 700px;
+  min-width: 300px;
+  margin: 2em auto;
+  padding: 2em;
+  background: #ffffff; 
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+fieldset {
+  border: none;
+  padding: 2rem 0;  border-bottom: none;
+}
+
+fieldset:last-of-type {
+margin-bottom:-35px;
+}
+
+label {
+  display: block;
+  margin: 2rem 0;
+font-weight: 500;
+  color: #555;
+}
+
+input,
+textarea,
+select {
+  margin: 10px 0 0 0;
+  width: 100%;
+min-height: 2em;
+background-color: #eaf4ff;
+  border: 1px solid #007bff;
+  color: #555;
+}
+
+legend{ font-weight: 500;
+  color: #555;
+margin-left:-3px;
+margin-bottom:-40px;
+}
+
+.inline {
+  display: inline;
+  width: unset;
+  margin: 0 0.5em 0 0;
+vertical-align: middle;
+}
+.inline-label{
+display:inline;
+  margin: 0 2em 0 0;
+}
+
+.form-group {
+  display: flex;
+align-items: center;
+  margin: 0.5em 0;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+margin-right: 0.75em;
+  cursor: pointer;
+}
+
+.form-group label {
+margin-left: 0.5em;
+  cursor: pointer;
+}
+
+textarea {
+  resize: vertical; min-height: 6em;
+}
+
+input[type="submit"] {
+  display: block;
+  width: 100%;
+  margin: 1.5em 0;
+  height: 3em;
+font-size: 1.2rem;
+background-color: #007bff;
+  border: none;
+  color: #ffffff;
+border-radius: 6px;
+  cursor: pointer;
+transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+  background-color: #0056b3;
+transform: scale(1.02); 
+}
+
+footer {
+text-align: center;font-size: 14px;
+}
+
+strong:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+
+** end of undefined **
+

@@ -1,0 +1,178 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribute to Charles Babbage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main id="main">
+        <h1 id="title">Charles Babbage: The Father of the Computer</h1>
+        
+        <div id="img-div">
+            <img id="image" src="data:image/jpeg;base64,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" alt="Charles Babbage" />
+            <figcaption id="img-caption">Charles Babbage, the British mathematician and inventor known for conceptualizing the first mechanical computer.</figcaption>
+        </div>
+
+        <div id="tribute-info">
+            <p>Charles Babbage (1791–1871) was an English mathematician, philosopher, inventor, and mechanical engineer. He is credited with conceptualizing the first automatic mechanical computer, known as the Analytical Engine. His design was a precursor to modern computers and laid the foundation for the field of computing.</p>
+        </div>
+
+        <div id="timeline">
+            <h2>Timeline of Achievements</h2>
+            <ul>
+                <li><strong>1791:</strong> Charles Babbage is born on December 26 in London, England.</li>
+                <li><strong>1821:</strong> Babbage designs the Difference Engine, an automatic mechanical calculator for solving polynomial equations.</li>
+                <li><strong>1832:</strong> Babbage publishes his ideas for the Analytical Engine, a more advanced mechanical computer that could perform any calculation.</li>
+                <li><strong>1834:</strong> The British government commissions Babbage to build a working Difference Engine.</li>
+                <li><strong>1871:</strong> Charles Babbage passes away on October 18 at the age of 79. His ideas and designs continue to influence modern computing.</li>
+            </ul>
+        </div>
+
+        <div id="quotes">
+            <blockquote>                <p>"The Analytical Engine weaves algebraic patterns, just as the Jacquard loom weaves flowers and leaves." - <cite>Ada Lovelace</cite></p>
+            </blockquote>
+        </div>
+
+        <p class="link">Eager to know more? </p>
+        <p class="link"">Uncover the full story of this incredible figure on their <a id="tribute-link"
+ href="https://en.wikipedia.org/wiki/Charles_Babbage" target="_blank">Wikipedia entry.</a></p>
+    </main>
+</body>
+</html>
+
+
+** end of undefined **
+
+** start of undefined **
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #e0f7fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#title {
+    color: #0288d1;
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+#img-div {
+    text-align: center;
+    margin: 20px 0;
+}
+
+#image {
+    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    height: auto;
+    border: 5px solid #0288d1;
+    border-radius: 8px;
+}
+
+#img-caption {
+    font-style: italic;
+    color: #00796b;
+    margin-top: 10px;
+}
+
+#tribute-info {
+    margin: 20px 0;
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+#timeline {
+    margin: 20px 0;
+}
+
+#timeline h2 {
+    color: #0288d1;
+}
+
+#timeline ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#timeline li {
+    background-color: #ffffff;
+    border-left: 4px solid #00796b;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+#quotes {
+    margin: 20px 0;
+}
+
+blockquote {
+    background-color: #ffffff;
+    border-left: 4px solid #fbc02d;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-style: italic;
+}
+
+blockquote p {
+    margin: 0;
+}
+
+cite {
+    display: block;
+    margin-top: 10px;
+    color: #eaa00a;;
+} 
+.link{
+    display: block;
+    text-align: center;
+    color: #ff4081;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.link:last-child{
+  margin-top: -15px;
+            display:inline-block;
+}
+
+#tribute-link {
+    display: inline-block;
+    text-align: center;
+    color: #ff4081;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+#tribute-link:hover {
+    text-decoration: underline;
+    color: #004d40; 
+}
+
+#tribute-link:visited {
+    text-decoration: underline;
+    color: #74638f; 
+}
+
+
+** end of undefined **
+

@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Soundarya Venkataraman</title>
+  </head>
+
+  <body>
+    <header id="navbar" class="header">
+      <div class="container">
+        <nav class="nav">
+          <a href="PersonalPortfolio.html" class="nav-name">
+            <i class="ri-code-s-slash-line"></i>Soundarya<span
+              >Venkataraman</span
+            >
+          </a>
+          <div class="nav-menu" id="navmenu">
+            <ul class="nav-list">
+              <li class="nav-link">
+                <a href="#hero" class="nav-link">Home</a>
+              </li>
+              <li class="nav-link">
+                <a href="#about" class="nav-link">About</a>
+              </li>
+              <li class="nav-link">
+                <a href="#qualification" class="nav-link">Qualification</a>
+              </li>
+              <li class="nav-link">
+                <a href="#experience" class="nav-link">Experience</a>
+              </li>
+              <li class="nav-link">
+                <a href="#project" class="nav-link">Projects</a>
+              </li>
+              <li class="nav-link">
+                <a href="#contact" class="nav-link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="nav_toggle">
+            <i id="nav-toggle" class="ri-menu-3-line"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <script>
+      const navMenu = document.getElementById("navmenu"),
+        navToggle = document.getElementById("nav-toggle"),
+        navList = document.querySelectorAll(".nav-list"),
+        header = document.getElementById("header");
+
+      // open and close menu
+      navToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("nav-menu--open");
+        console.log(navMenu);
+        changeIcon();
+      });
+
+      // close the menu when the user clicks the nav links
+      navList.forEach((list) => {
+        list.addEventListener("click", () => {
+          if (navMenu.classList.contains("nav-menu--open")) {
+            navMenu.classList.remove("nav-menu--open");
+          }
+          changeIcon();
+        });
+      });
+
+      // Change nav toggle icon
+      function changeIcon() {
+        if (navMenu.classList.contains("nav-menu--open")) {
+          navToggle.classList.replace("ri-menu-3-line", "ri-close-line");
+        } else {
+          navToggle.classList.replace("ri-close-line", "ri-menu-3-line");
+        }
+      }
+    </script>
+    <main class="main">
+      <section id="welcome-section" class="welcome-section">
+        <div class="container">
+          <div class="d-grid welcome-wrapper">
+            <div class="welcome-content">
+              <h1 class="welcome-title">
+                Hi, I am Soundarya,<br />Software Developer.
+              </h1>
+              <p class="intro-description">
+                I'm a driven software developer with a passion for creating
+                efficient, high-quality solutions that meet client and end-user
+                needs. I focus on crafting intuitive software while staying
+                updated on the latest technology trends and continuously
+                improving my skills. Eager to embrace new challenges, I thrive
+                in collaborative environments to deliver exceptional results.
+                I'm here to transform your vision into reality. Let’s create
+                something amazing together!
+              </p>
+              <div class="intro-info">
+                <div class="intro-info-wrapper">
+                  <p class="intro-info-number">04+</p>
+                  <h2 class="intro-info-title">Years<br />Experience</h2>
+                </div>
+                <div class="intro-info-wrapper">
+                  <p class="intro-info-number">03+</p>
+                  <h2 class="intro-info-title">
+                    Completed<br />Certifications
+                  </h2>
+                </div>
+                <div class="intro-info-wrapper">
+                  <p class="intro-info-number">15+</p>
+                  <h2 class="intro-info-title">Projects<br />Completed</h2>
+                </div>
+              </div>
+            </div>
+            <img src="soundarya1.jpg" alt="Soundarya" class="intro-img" />
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section about">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">About Me</h2>
+            <span class="section-subtitle">Who am I</span>
+          </div>
+          <div class="d-grid about-wrapper">
+            <div class="about-content">
+              <h3 class="about-title">
+                I'm a Professional and Experienced Software Developer.
+              </h3>
+              <p class="about-description">
+                A passionate and skilled software developer with a robust
+                foundation in both frontend and backend web development. With
+                four years of experience in banking and manufacturing domains, I
+                build dynamic applications using technologies like React,
+                Node.js, Java and Spring Boot. After a brief career break for
+                health reasons, ready to dive back into collaborative projects
+                and deliver exceptional solutions.
+              </p>
+              <a href="#project" class="btn btn--primary">Know More</a>
+            </div>
+            <div class="skills">
+              <h3 class="skills-title">Technologies I've been working with:</h3>
+              <div class="skills-wrapper">
+                <div class="skills-content">
+                  <h4 class="skills-subtitle">Frontend</h4>
+                  <ul class="skills-list">
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> HTML5
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> CSS3
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> JavaScript
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> Bootstrap
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> React
+                    </li>
+                  </ul>
+                </div>
+                <div class="skills-content">
+                  <h4 class="skills-subtitle">Backend</h4>
+                  <ul class="skills-list">
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> Java
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> SpringBoot
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> MySQL
+                    </li>
+                  </ul>
+                </div>
+                <div class="skills-content">
+                  <h4 class="skills-subtitle">Tools & Tech's</h4>
+                  <ul class="skills-list">
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> Git & Github
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> AWS
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> VSCode
+                    </li>
+                    <li class="skills-item">
+                      <i class="ri-arrow-right-s-fill"></i> Eclipse
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="qualification" class="section qualification">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Qualification</h2>
+            <span class="section-subtitle">Experience & Education</span>
+          </div>
+          <div class="qualification-wrapper">
+            <h3 class="qualification-name">
+              <i class="ri-briefcase-fill"></i>
+              Professional Experience
+            </h3>
+            <div class="d-grid qualification-content">
+              <div class="qualification-item">
+                <h3 class="qualification-title">Senior software Developer</h3>
+                <span class="qualification-subtitle">Infosys Ltd.</span>
+                <p class="qualification-description">
+                  As a freelance software developer, I am passionate about
+                  creating innovative and effective software solutions thats
+                  meet the unique needs of my clients. Whether it's building a
+                  custom web application or automating business processes, I
+                  bring expertise and creativity to every project, and I am
+                  always looking for new and challenging projects to tackle.
+                </p>
+                <div class="date-flex">
+                  <div class="icon ri-calendar-line"></div>
+                  <span class="qualification-date">2021 - Present</span>
+                </div>
+              </div>
+              <div class="qualification-item">
+                <h3 class="qualification-title">Software Engineer</h3>
+                <span class="qualification-subtitle"
+                  >Tata Consultancy Services</span
+                >
+                <p class="qualification-description">
+                  As a freelance software developer, I am passionate about
+                  creating innovative and effective software solutions thats
+                  meet the unique needs of my clients. Whether it's building a
+                  custom web application or automating business processes, I
+                  bring expertise and creativity to every project, and I am
+                  always looking for new and challenging projects to tackle.
+                </p>
+                <div class="date-flex">
+                  <div class="icon ri-calendar-line"></div>
+                  <span class="qualification-date">2021 - Present</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="qualification-wrapper">
+            <h3 class="qualification-name">
+              <i class="ri-booklet-fill"></i>
+              Education
+            </h3>
+            <div class="d-grid qualification-content">
+              <div class="qualification-item">
+                <h3 class="qualification-title">
+                  Bachelors of Engineering & Computer Science
+                </h3>
+                <p class="qualification-description">
+                  As a computer science student, I have a strong foundation in
+                  algorithms, data structures, software design and Development.
+                  My coursework has provided me with a deep understanding of the
+                  principles and practices of computer science, and I have honed
+                  my programming skills through various projects and
+                  assignments.
+                </p>
+                <div class="date-flex">
+                  <div class="icon ri-calendar-line"></div>
+                  <span class="qualification-date">2014 - 2018</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="qualification-footer">
+            <p class="qualification-footer-text">See my full resume</p>
+            <a href="Resume.pdf" download class="btn btn--primary">Resume</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="service" class="section service">
+        <div class="container">
+          <div class="section__header">
+            <h2 class="section__title">Services</h2>
+            <span class="section__subtitle">What I do</span>
+          </div>
+          <div class="d-grid service__wrapper">
+            <div class="service__card">
+              <div class="service__icon">
+                <i class="ri-layout-4-fill"></i>
+              </div>
+              <h3 class="service__title">Frontend<br />Development</h3>
+              <span
+                class="button button--flex button--small button--link services__button"
+              >
+                View more
+                <i class="ri-arrow-right-circle-fill button__icon"></i>
+              </span>
+              <div class="services__modal">
+                <div class="services__modal-content">
+                  <h3 class="services__modal-title">
+                    Frontend Development<br />
+                  </h3>
+                  <i class="ri-close-large-fill services__modal-close"></i>
+
+                  <ul class="services__modal-services d-grid">
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        User Interface Design: Create visually appealing and
+                        user-friendly interfaces using modern HTML, CSS, and
+                        JavaScript frameworks like React.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Responsive Web Design: Develop responsive and adaptive
+                        webpages that provide an optimal viewing experience
+                        across various devices and screen sizes.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Interactive Elements: Implement interactive UI elements
+                        and enhance user experience through dynamic features and
+                        smooth transitions.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Performance Optimization: Optimize frontend code to
+                        improve load times and overall performance, ensuring
+                        fast and efficient web applications.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Cross-Browser Compatibility: Ensure that web
+                        applications work seamlessly across different browsers
+                        and platforms by addressing compatibility issues.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        UX/UI Enhancements: Continuously improve user experience
+                        (UX) and user interface (UI) design based on user
+                        feedback and usability testing.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="service__card">
+              <div class="service__icon">
+                <i class="ri-code-s-slash-line"></i>
+              </div>
+              <h3 class="service__title">
+                Backend<br />
+                Development
+              </h3>
+              <span
+                class="button button--flex button--small button--link services__button"
+              >
+                View more
+                <i class="ri-arrow-right-circle-fill button__icon"></i>
+              </span>
+              <div class="services__modal">
+                <div class="services__modal-content">
+                  <h3 class="services__modal-title">
+                    Backend Development<br />
+                  </h3>
+                  <i class="ri-close-large-fill services__modal-close"></i>
+
+                  <ul class="services__modal-services d-grid">
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        API Development: Design and build RESTful APIs to ensure
+                        efficient data exchange and integration with frontend
+                        systems.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Database Management: Implement and optimize databases
+                        using IBMDB2, MySQL, or PostgreSQL for robust data
+                        storage solutions.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Custom Backend Solutions: Develop server-side logic for
+                        complex business processes, ensuring functionality and
+                        performance.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        SaaS Development: Contribute to SaaS platforms with
+                        multi-tenant architecture, providing secure and seamless
+                        experiences for clients.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Cloud Integration: Deploy and manage backend systems on
+                        cloud platforms like AWS ensuring scalability and
+                        reliability.
+                      </p>
+                    </li>
+
+                    <li class="services__modal-service">
+                      <i
+                        class="ri-checkbox-circle-fill services__modal-icon"
+                      ></i>
+                      <p>
+                        Security Implementation: Implement best practices in
+                        security, including data encryption, secure
+                        authentication, and authorization.
+                      </p>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!--========= service card 3 =========-->
+            <!-- <div class="service__card">
+                    <div class="service__icon">
+                        <i class="ri-pen-nib-fill"></i>
+                    </div>
+                    <h3 class="service__title">UI/UX<br> Design</h3>
+                    <a href="#" class="service__link">Know More</a>
+                </div> -->
+          </div>
+        </div>
+      </section>
+      <script>
+        const modalViews = document.querySelectorAll(".services__modal"),
+          modalBtns = document.querySelectorAll(".services__button"),
+          modalCloses = document.querySelectorAll(".services__modal-close");
+
+        let modal = function (modalClick) {
+          modalViews[modalClick].classList.add("active-modal");
+        };
+
+        modalBtns.forEach((modalBtn, i) => {
+          modalBtn.addEventListener("click", () => {
+            modal(i);
+          });
+        });
+
+        modalCloses.forEach((modalClose) => {
+          modalClose.addEventListener("click", () => {
+            modalViews.forEach((modalView) => {
+              modalView.classList.remove("active-modal");
+            });
+          });
+        });
+      </script>
+    </main>
+  </body>
+</html>
