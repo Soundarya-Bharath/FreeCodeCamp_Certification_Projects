@@ -10,14 +10,21 @@
       rel="stylesheet"
     />
     <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v6.6.0/css/all.css"
+      crossorigin="anonymous"
+    />
+    <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="faviconcolor.png" type="image/png" />
     <title>Soundarya Venkataraman</title>
   </head>
 
   <body>
+    <!-- Nav Bar -->
     <header id="navbar" class="header">
       <div class="container">
         <nav class="nav">
@@ -29,7 +36,7 @@
           <div class="nav-menu" id="navmenu">
             <ul class="nav-list">
               <li class="nav-link">
-                <a href="#hero" class="nav-link">Home</a>
+                <a href="#welcome-section" class="nav-link">Home</a>
               </li>
               <li class="nav-link">
                 <a href="#about" class="nav-link">About</a>
@@ -41,7 +48,7 @@
                 <a href="#experience" class="nav-link">Experience</a>
               </li>
               <li class="nav-link">
-                <a href="#project" class="nav-link">Projects</a>
+                <a href="#projects" class="nav-link">Projects</a>
               </li>
               <li class="nav-link">
                 <a href="#contact" class="nav-link">Contact</a>
@@ -51,9 +58,11 @@
           <div class="nav_toggle">
             <i id="nav-toggle" class="ri-menu-3-line"></i>
           </div>
+          <i class="ri-sun-line change-theme" id="theme-button"></i>
         </nav>
       </div>
     </header>
+    <!-- Nav Bar and Change Theme Script -->
     <script>
       const navMenu = document.getElementById("navmenu"),
         navToggle = document.getElementById("nav-toggle"),
@@ -85,8 +94,63 @@
           navToggle.classList.replace("ri-close-line", "ri-menu-3-line");
         }
       }
+
+      /* Color theme */
+      const themeButton = document.getElementById("theme-button");
+      const lightTheme = "light-theme";
+      const sunIcon = "ri-sun-line"; // Icon for dark theme
+      const moonIcon = "ri-moon-fill"; // Icon for light theme
+
+      // Function to get the current theme
+      const getCurrentTheme = () => {
+        return document.body.classList.contains(lightTheme) ? "light" : "dark";
+      };
+
+      // Function to update theme and icon
+      const updateThemeAndIcon = () => {
+        const currentTheme = getCurrentTheme();
+        // Update body class and theme button icon
+        document.body.classList.toggle(lightTheme, currentTheme === "light");
+        themeButton.classList.toggle(sunIcon, currentTheme === "dark");
+        themeButton.classList.toggle(moonIcon, currentTheme === "light");
+      };
+
+      // Load previously selected theme and icon
+      const selectedTheme = localStorage.getItem("selected-theme");
+      const selectedIcon = localStorage.getItem("selected-icon");
+
+      if (selectedTheme) {
+        // Apply saved theme and icon
+        document.body.classList.toggle(lightTheme, selectedTheme === "light");
+        themeButton.classList.toggle(sunIcon, selectedIcon === sunIcon);
+        themeButton.classList.toggle(moonIcon, selectedIcon === moonIcon);
+      } else {
+        // Default to dark theme
+        document.body.classList.remove(lightTheme);
+        themeButton.classList.add(sunIcon);
+      }
+
+      // Update theme and icon initially
+      updateThemeAndIcon();
+
+      // Add event listener for theme toggle button
+      themeButton.addEventListener("click", () => {
+        // Toggle theme
+        const newTheme = getCurrentTheme() === "light" ? "dark" : "light";
+        localStorage.setItem("selected-theme", newTheme);
+        localStorage.setItem(
+          "selected-icon",
+          newTheme === "light" ? moonIcon : sunIcon
+        );
+
+        // Update theme and icon immediately
+        document.body.classList.toggle(lightTheme, newTheme === "light");
+        themeButton.classList.toggle(sunIcon, newTheme === "dark");
+        themeButton.classList.toggle(moonIcon, newTheme === "light");
+      });
     </script>
     <main class="main">
+      <!-- Home Section -->
       <section id="welcome-section" class="welcome-section">
         <div class="container">
           <div class="d-grid welcome-wrapper">
@@ -121,11 +185,26 @@
                 </div>
               </div>
             </div>
-            <img src="soundarya1.jpg" alt="Soundarya" class="intro-img" />
+            <img
+              src="soundarya1.png"
+              alt="Soundarya"
+              class="intro-img"
+              style="height: 100%"
+            />
+          </div>
+          <div class="home-scroll">
+            <a href="#about" class="home-scroll-button button--flex">
+              <i class="ri-scroll-to-bottom-fill home-scroll-mouse"></i>
+              <span class="home-scroll-name" style="padding: 0 0.9rem"
+                >Scroll Down</span
+              >
+              <i class="ri-arrow-down-line home-scroll-arrow"></i>
+            </a>
           </div>
         </div>
       </section>
 
+      <!-- About Section -->
       <section id="about" class="section about">
         <div class="container">
           <div class="section-header">
@@ -151,6 +230,7 @@
             <div class="skills">
               <h3 class="skills-title">Technologies I've been working with:</h3>
               <div class="skills-wrapper">
+                <!-- Skills Content 1 -->
                 <div class="skills-content">
                   <h4 class="skills-subtitle">Frontend</h4>
                   <ul class="skills-list">
@@ -171,6 +251,7 @@
                     </li>
                   </ul>
                 </div>
+                <!-- Skills Content 2 -->
                 <div class="skills-content">
                   <h4 class="skills-subtitle">Backend</h4>
                   <ul class="skills-list">
@@ -185,6 +266,7 @@
                     </li>
                   </ul>
                 </div>
+                <!-- Skills Content 3 -->
                 <div class="skills-content">
                   <h4 class="skills-subtitle">Tools & Tech's</h4>
                   <ul class="skills-list">
@@ -208,6 +290,7 @@
         </div>
       </section>
 
+      <!-- Qualification Section -->
       <section id="qualification" class="section qualification">
         <div class="container">
           <div class="section-header">
@@ -220,6 +303,7 @@
               Professional Experience
             </h3>
             <div class="d-grid qualification-content">
+              <!-- Professional Experience 1 -->
               <div class="qualification-item">
                 <h3 class="qualification-title">Senior software Developer</h3>
                 <span class="qualification-subtitle">Infosys Ltd.</span>
@@ -236,6 +320,7 @@
                   <span class="qualification-date">2021 - Present</span>
                 </div>
               </div>
+              <!-- Professional Experience 2 -->
               <div class="qualification-item">
                 <h3 class="qualification-title">Software Engineer</h3>
                 <span class="qualification-subtitle"
@@ -256,6 +341,7 @@
               </div>
             </div>
           </div>
+          <!-- Education -->
           <div class="qualification-wrapper">
             <h3 class="qualification-name">
               <i class="ri-booklet-fill"></i>
@@ -283,40 +369,47 @@
           </div>
           <div class="qualification-footer">
             <p class="qualification-footer-text">See my full resume</p>
-            <a href="Resume.pdf" download class="btn btn--primary">Resume</a>
+            <a
+              href="https://new.express.adobe.com/id/urn:aaid:sc:VA6C2:7284f12f-6d06-5832-8479-7e99bb7286a1?invite=true&promoid=Z2G1FQKR&mv=other"
+              download
+              class="btn btn--primary"
+              >Resume</a
+            >
           </div>
         </div>
       </section>
 
-      <section id="service" class="section service">
+      <!-- Experience Section -->
+      <section id="experience" class="section experience">
         <div class="container">
-          <div class="section__header">
-            <h2 class="section__title">Services</h2>
-            <span class="section__subtitle">What I do</span>
+          <div class="section-header">
+            <h2 class="section-title">Experiences</h2>
+            <span class="section-subtitle">What I do</span>
           </div>
-          <div class="d-grid service__wrapper">
-            <div class="service__card">
-              <div class="service__icon">
+          <div class="d-grid experience-wrapper">
+            <!-- Experience Card 1 -->
+            <div class="experience-card">
+              <div class="experience-icon">
                 <i class="ri-layout-4-fill"></i>
               </div>
-              <h3 class="service__title">Frontend<br />Development</h3>
+              <h3 class="experience-title">Frontend<br />Development</h3>
               <span
-                class="button button--flex button--small button--link services__button"
+                class="button button--flex button--small button--link experience-button"
               >
                 View more
-                <i class="ri-arrow-right-circle-fill button__icon"></i>
+                <i class="ri-arrow-right-circle-fill button-icon"></i>
               </span>
-              <div class="services__modal">
-                <div class="services__modal-content">
-                  <h3 class="services__modal-title">
+              <div class="experience-modal">
+                <div class="experience-modal-content">
+                  <h3 class="experience-modal-title">
                     Frontend Development<br />
                   </h3>
-                  <i class="ri-close-large-fill services__modal-close"></i>
+                  <i class="ri-close-large-fill experience-modal-close"></i>
 
-                  <ul class="services__modal-services d-grid">
-                    <li class="services__modal-service">
+                  <ul class="experience-modal-experiences d-grid">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         User Interface Design: Create visually appealing and
@@ -325,9 +418,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Responsive Web Design: Develop responsive and adaptive
@@ -336,9 +429,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Interactive Elements: Implement interactive UI elements
@@ -347,9 +440,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Performance Optimization: Optimize frontend code to
@@ -358,9 +451,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Cross-Browser Compatibility: Ensure that web
@@ -369,9 +462,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         UX/UI Enhancements: Continuously improve user experience
@@ -384,31 +477,32 @@
               </div>
             </div>
 
-            <div class="service__card">
-              <div class="service__icon">
+            <!-- Experience Card 2 -->
+            <div class="experience-card">
+              <div class="experience-icon">
                 <i class="ri-code-s-slash-line"></i>
               </div>
-              <h3 class="service__title">
+              <h3 class="experience-title">
                 Backend<br />
                 Development
               </h3>
               <span
-                class="button button--flex button--small button--link services__button"
+                class="button button--flex button--small button--link experience-button"
               >
                 View more
-                <i class="ri-arrow-right-circle-fill button__icon"></i>
+                <i class="ri-arrow-right-circle-fill button-icon"></i>
               </span>
-              <div class="services__modal">
-                <div class="services__modal-content">
-                  <h3 class="services__modal-title">
+              <div class="experience-modal">
+                <div class="experience-modal-content">
+                  <h3 class="experience-modal-title">
                     Backend Development<br />
                   </h3>
-                  <i class="ri-close-large-fill services__modal-close"></i>
+                  <i class="ri-close-large-fill experience-modal-close"></i>
 
-                  <ul class="services__modal-services d-grid">
-                    <li class="services__modal-service">
+                  <ul class="experience-modal-experiences d-grid">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         API Development: Design and build RESTful APIs to ensure
@@ -417,9 +511,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Database Management: Implement and optimize databases
@@ -428,9 +522,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Custom Backend Solutions: Develop server-side logic for
@@ -439,9 +533,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         SaaS Development: Contribute to SaaS platforms with
@@ -450,9 +544,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Cloud Integration: Deploy and manage backend systems on
@@ -461,9 +555,9 @@
                       </p>
                     </li>
 
-                    <li class="services__modal-service">
+                    <li class="experience-modal-experience">
                       <i
-                        class="ri-checkbox-circle-fill services__modal-icon"
+                        class="ri-checkbox-circle-fill experience-modal-icon"
                       ></i>
                       <p>
                         Security Implementation: Implement best practices in
@@ -475,21 +569,15 @@
                 </div>
               </div>
             </div>
-            <!--========= service card 3 =========-->
-            <!-- <div class="service__card">
-                    <div class="service__icon">
-                        <i class="ri-pen-nib-fill"></i>
-                    </div>
-                    <h3 class="service__title">UI/UX<br> Design</h3>
-                    <a href="#" class="service__link">Know More</a>
-                </div> -->
           </div>
         </div>
       </section>
+
+      <!-- Experiences Script -->
       <script>
-        const modalViews = document.querySelectorAll(".services__modal"),
-          modalBtns = document.querySelectorAll(".services__button"),
-          modalCloses = document.querySelectorAll(".services__modal-close");
+        const modalViews = document.querySelectorAll(".experience-modal"),
+          modalBtns = document.querySelectorAll(".experience-button"),
+          modalCloses = document.querySelectorAll(".experience-modal-close");
 
         let modal = function (modalClick) {
           modalViews[modalClick].classList.add("active-modal");
@@ -508,6 +596,371 @@
             });
           });
         });
+      </script>
+
+      <!-- Project Section -->
+      <section id="projects" class="section project">
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title">Projects</h2>
+            <span class="section-subtitle">My recent work</span>
+          </div>
+          <div class="d-grid project-wrapper">
+            <!-- project 1 -->
+            <div class="project-content project-tile">
+              <img
+                src="JobSurveyForm.PNG"
+                alt="Job Survey Website"
+                class="project-img"
+              />
+              <h3 class="project-title">Job Survey Website</h3>
+              <p class="project-description">
+                A responsive web form for collecting job feedback, featuring
+                clear input fields, accessible design, and validation for
+                quality submissions.
+              </p>
+              <a
+                href="https://soundarya-bharath.github.io/FreeCodeCamp_Certification_Projects/Responsive_Web_Design/1_Build_a_survey_form/BuildingSurveyForm.html"
+                class="project-link"
+                target="_blank"
+                >View Project <i class="ri-arrow-right-line"></i
+              ></a>
+              <a
+                href="https://github.com/Soundarya-Bharath/FreeCodeCamp_Certification_Projects/tree/main/Responsive_Web_Design/1_Build_a_survey_form"
+                class="project-link"
+                target="_blank"
+                style="padding-top: 2rem"
+                >GitHub Source Code <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <!-- project 2 -->
+            <div class="project-content">
+              <img
+                src="TributePage1.PNG"
+                alt="Tribute Page Application "
+                class="project-img"
+              />
+              <h3 class="project-title">Tribute Page</h3>
+              <p class="project-description">
+                A responsive tribute page dedicated to a notable figure,
+                showcasing their achievements through images and concise text in
+                an elegant design.
+              </p>
+              <a
+                href="https://soundarya-bharath.github.io/FreeCodeCamp_Certification_Projects/Responsive_Web_Design/2_Build_a_Tribute_Page/BuildingTributePage.html"
+                class="project-link"
+                target="_blank"
+                >View Project <i class="ri-arrow-right-line"></i
+              ></a>
+              <a
+                href="https://github.com/Soundarya-Bharath/FreeCodeCamp_Certification_Projects/tree/main/Responsive_Web_Design/2_Build_a_Tribute_Page"
+                class="project-link"
+                target="_blank"
+                style="padding-top: 2rem"
+                >GitHub Source Code <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <!-- project 3 -->
+            <div class="project-content">
+              <img
+                src="TechnicalDocumentation1.PNG"
+                alt="Technical Documentation Page"
+                class="project-img"
+              />
+              <h3 class="project-title">Technical Documentation Page</h3>
+              <p class="project-description">
+                A responsive technical documentation page that provides clear
+                instructions and organized sections for easy navigation and user
+                access.
+              </p>
+              <a
+                href="https://soundarya-bharath.github.io/FreeCodeCamp_Certification_Projects/Responsive_Web_Design/3_Build_a_Technical_Documentation/BuildingTechnicalDocumentation.html"
+                class="project-link"
+                target="_blank"
+                >View Project <i class="ri-arrow-right-line"></i
+              ></a>
+              <a
+                href="https://github.com/Soundarya-Bharath/FreeCodeCamp_Certification_Projects/tree/main/Responsive_Web_Design/3_Build_a_Technical_Documentation"
+                class="project-link"
+                target="_blank"
+                style="padding-top: 2rem"
+                >GitHub Source Code <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <!--  project 4  -->
+            <div class="project-content">
+              <img
+                src="ProductLandingPage1.PNG"
+                alt="Product Landing Application "
+                class="project-img"
+              />
+              <h3 class="project-title">Product Landing Webpage</h3>
+              <p class="project-description">
+                A responsive landing page for Cyber Pro, featuring engaging
+                visuals and clear information about cybersecurity solutions for
+                users' protection.
+              </p>
+              <a
+                href="https://soundarya-bharath.github.io/FreeCodeCamp_Certification_Projects/Responsive_Web_Design/4_Build_a_Product_Landing_Page/BuildingProductLandingPage.html"
+                class="project-link"
+                target="_blank"
+                >View Project <i class="ri-arrow-right-line"></i
+              ></a>
+              <a
+                href="https://github.com/Soundarya-Bharath/FreeCodeCamp_Certification_Projects/tree/main/Responsive_Web_Design/4_Build_a_Product_Landing_Page"
+                class="project-link"
+                target="_blank"
+                style="padding-top: 2rem"
+                >GitHub Source Code <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+
+            <!--  project 5  -->
+            <div class="project-content">
+              <img
+                src="Portfolio.PNG"
+                alt="Modern Portfolio"
+                class="project-img"
+              />
+              <h3 class="project-title">Modern Portfolio</h3>
+              <p class="project-description">
+                A responsive portfolio website that adapts to all devices,
+                featuring UI components and smooth scrolling for an enhanced
+                user experience.
+              </p>
+              <a
+                href="https://soundarya-bharath.github.io/FreeCodeCamp_Certification_Projects/Responsive_Web_Design/5_Build_a_Personal_Portfolio_Webpage/PersonalPortfolio.html"
+                class="project-link"
+                target="_blank"
+                >View Project <i class="ri-arrow-right-line"></i
+              ></a>
+              <a
+                href="https://github.com/Soundarya-Bharath/FreeCodeCamp_Certification_Projects/tree/main/Responsive_Web_Design/5_Build_a_Personal_Portfolio_Webpage"
+                class="project-link"
+                target="_blank"
+                style="padding-top: 2rem"
+                >GitHub Source Code <i class="ri-arrow-right-line"></i
+              ></a>
+            </div>
+          </div>
+          <div class="project-show-btn">
+            <a
+              href="https://codepen.io/FreeCodeCamp/"
+              class="btn btn--primary"
+              target="_blank"
+              >Show all<i class="ri-arrow-right-s-line"></i
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact" class="section contact">
+        <div class="container">
+          <div class="d-grid contact-wrapper">
+            <div class="contact-content">
+              <h2 class="contact-title">
+                Interested in working together? Let's talk
+              </h2>
+              <p class="contact-description">
+                I’m currently on the lookout for exciting job opportunities in
+                software development and would love to connect! If you have a
+                specific role in mind or just want to explore potential
+                collaborations, please reach out using the contact information
+                below. I’m eager to discuss how we can work together and look
+                forward to hearing from you!
+              </p>
+            </div>
+            <div class="contact-btn">
+              <a href="#contactform" class="btn btn--secondary">Get in touch</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Get in touch submission form -->
+        <div class="container">
+          <div class="section-header">
+            <h2 class="section-title" id="contactform">Contact Me</h2>
+            <span class="section-subtitle">Get in touch</span>
+          </div>
+          <div class="contactform-wrapper">
+            <form
+              action="https://formspree.io/f/movqavdo"
+              method="POST"
+              class="contact-form d-grid"
+            >
+              <div class="contactform-inputs d-grid">
+                <div class="contactform-content">
+                  <label for="" class="contactform-label">Name</label>
+                  <input
+                    type="text"
+                    name="First Name"
+                    placeholder="Name"
+                    class="contactform-input"
+                  />
+                </div>
+
+                <div class="contactform-content">
+                  <label for="" class="contactform-label">E-mail</label>
+                  <input
+                    type="email"
+                    name="Email Address"
+                    placeholder="Your Email Address"
+                    class="contactform-input"
+                  />
+                </div>
+              </div>
+
+              <div class="contactform-content">
+                <label for="" class="contactform-label">Subject</label>
+                <input
+                  type="text"
+                  name="Subject"
+                  placeholder="Subject"
+                  class="contactform-input"
+                />
+              </div>
+
+              <div class="contactform-content">
+                <label for="" class="contactform-label">Description</label>
+                <textarea
+                  name="Message"
+                  placeholder="Message"
+                  cols="0"
+                  rows="7"
+                  class="contactform-input"
+                ></textarea>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  style="border: none; background: none; padding: none"
+                >
+                  <span class="btn btn--primary">
+                    Send message
+                    <i class="ri-send-plane-2-line button-icon"></i>
+                  </span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer Section -->
+      <footer id="footer" class="footer">
+        <div class="container">
+          <div class="d-grid footer-wrapper">
+            <div class="footer-content">
+              <h4 class="footer-title">Follow Me</h4>
+              <ul class="footer-social-list">
+                <li class="footer-social-item">
+                  <a
+                    href="https://www.linkedin.com/in/soundaryavenkataraman/"
+                    target="_blank"
+                    class="footer-social-link"
+                    id="profile-link"
+                  >
+                    <i class="ri-linkedin-fill"></i>
+                  </a>
+                </li>
+                <li class="footer-social-item">
+                  <a
+                    href="https://github.com/Soundarya-Bharath"
+                    target="_blank"
+                    class="footer-social-link"
+                    id="profile-link"
+                  >
+                    <i class="ri-github-fill"></i>
+                  </a>
+                </li>
+                <li class="footer-social-item">
+                  <a
+                    href="https://www.freecodecamp.org/Soundarya_Venkataraman"
+                    target="_blank"
+                    class="footer-social-link"
+                    id="profile-link"
+                  >
+                    <i class="fa-brands fa-free-code-camp"></i>
+                  </a>
+                </li>
+                <li class="footer-social-item">
+                  <a
+                    href="https://codepen.io/soundarya_venkataraman/"
+                    target="_blank"
+                    class="footer-social-link"
+                    id="profile-link"
+                  >
+                    <i class="ri-codepen-fill"></i>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-content">
+              <h4 class="footer-title">Email Me</h4>
+              <a href="#" class="footer-contact">test@gmail.com</a>
+            </div>
+            <div class="footer-content">
+              <h4 class="footer-title">Call Me</h4>
+              <a href="#" class="footer-contact">+(1)987-654-3210</a>
+            </div>
+          </div>
+          <p class="footer-copyright">
+            &copy; 2024 Soundarya Venkataraman. All Rights Reserved
+          </p>
+        </div>
+      </footer>
+
+      <a href="#" class="scrollup" id="scroll-up">
+        <i class="ri-arrow-up-line scrollup-icon"></i>
+      </a>
+
+      <!-- Scroll Script -->
+      <script>
+        /* Scroll Sections Active Link */
+        const sections = document.querySelectorAll("section[id]");
+        function scrollActive() {
+          const scrollY = window.pageYOffset;
+
+          sections.forEach((section) => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 50;
+            const sectionId = section.getAttribute("id");
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+              document
+                .querySelector(".nav-menu a[href*=" + sectionId + "]")
+                .classList.add("active-link");
+            } else {
+              document
+                .querySelector(".nav-menu a[href*=" + sectionId + "]")
+                .classList.remove("active-link");
+            }
+          });
+        }
+        window.addEventListener("scroll", scrollActive);
+
+        /* Change Background Header */
+        function scrollHeader() {
+          const nav = document.querySelector("header[id]");
+          console.log(nav);
+          // When the scroll is greater than 200 viewport height, add the scroll-header class to the header tag
+          if (this.scrollY >= 80) nav.classList.add("scroll-header");
+          else nav.classList.remove("scroll-header");
+        }
+        window.addEventListener("scroll", scrollHeader);
+
+        /* Show Scroll Up */
+        function scrollUp() {
+          const scrollUp = document.getElementById("scroll-up");
+          // When the scroll is higher than 560 viewport height, add the show-scroll class to the a tag with the scroll-top class
+          if (this.scrollY >= 560) scrollUp.classList.add("show-scroll");
+          else scrollUp.classList.remove("show-scroll");
+        }
+        window.addEventListener("scroll", scrollUp);
       </script>
     </main>
   </body>

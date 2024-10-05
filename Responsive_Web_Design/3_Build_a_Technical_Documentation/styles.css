@@ -104,11 +104,11 @@ body {
 }
 
 #container {
-  z-index: -3;
+  /* z-index: -3; */
   float: right;
   width: 100%;
   position: fixed;
-  height: 70vh;
+  height: 78vh;
   overflow-y: scroll;
   top: 120px;
 }
