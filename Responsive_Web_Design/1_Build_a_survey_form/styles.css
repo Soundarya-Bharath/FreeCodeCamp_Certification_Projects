@@ -121,7 +121,7 @@ input[type="submit"]:hover {
 footer {
   text-align: center;
   font-size: 14px;
-  margin-bottom: 2rem;
+  padding-bottom: 1rem;
 }
 
 strong:hover {
