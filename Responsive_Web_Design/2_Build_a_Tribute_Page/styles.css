@@ -101,7 +101,8 @@ cite {
 
 .link:last-child {
   margin-top: -15px;
-  display: inline-block;
+  display: block;
+  text-align: center;
 }
 
 #tribute-link {
